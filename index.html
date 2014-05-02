@@ -5053,7 +5053,7 @@ Bitcoin.ECKey = (function () {
 		this.compressed = (this.compressed == undefined) ? !!ECKey.compressByDefault : this.compressed;
 	};
 
-	ECKey.privateKeyPrefix = 0x80; // mainnet 0xb0    testnet 0xEF
+	ECKey.privateKeyPrefix = 0x9c; // mainnet 0xb0    testnet 0xEF
 
 	/**
 	* Whether public keys should be returned compressed by default.
@@ -5240,7 +5240,7 @@ Bitcoin.ECKey = (function () {
 	// 51 characters base58, always starts with a '6'
 	ECKey.isWalletImportFormat = function (key) {
 		key = key.toString();
-		return (ECKey.privateKeyPrefix == 0x80) ?
+		return (ECKey.privateKeyPrefix == 0x9c) ?
 							(/^6[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key)) :
 							(/^9[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key));
 	};
@@ -5248,7 +5248,7 @@ Bitcoin.ECKey = (function () {
 	// 52 characters base58
 	ECKey.isCompressedWalletImportFormat = function (key) {
 		key = key.toString();
-		return (ECKey.privateKeyPrefix == 0x80) ?
+		return (ECKey.privateKeyPrefix == 0x9c) ?
 							(/^T[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key)) :
 							(/^c[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key));
 	};
@@ -6160,7 +6160,7 @@ body { font-family: Arial; }
 			<div class="authorpgp">
 				<span class="item">
 					<a href="pgpsignedmsg.txt" target="_blank"><span id="footerlabelversion">Version History</span> (v2.6.0)</a>
-					(<a href="ninja_bitaddress.org.txt" target="_blank" id="footerlabelpgp">PGP</a>)
+					(<a href="../cannacoinpublickey.txt" target="_blank" id="footerlabelpgp">PGP</a>)
 				</span>
 				<span class="item">527B 5C82 B1F6 B2DB 72A0<br />ECBF 8749 7B91 6397 4F5A</span>
 				<span class="item"><a href="https://github.com/Cannacoin-project/paperwallet" target="_blank" id="footerlabelgithub">GitHub Repository</a></span>
